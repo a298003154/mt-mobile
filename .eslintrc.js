@@ -1,18 +1,48 @@
 module.exports = {
-  root: true,
   env: {
-    node: true
+    browser: true,
+    es6: true
   },
-  'extends': [
-    'plugin:vue/essential',
-    'eslint:recommended',
-    '@vue/typescript'
-  ],
-  rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
+
   parserOptions: {
-    parser: '@typescript-eslint/parser'
-  }
-}
+    ecmaVersion: 2018,
+    sourceType: 'module'
+  },
+
+  plugins: [
+    'vue'
+  ],
+
+  rules: {
+    'no-undef': 0,
+    'no-bitwise': 0,
+    'func-names': 0,
+    'no-plusplus': 0,
+    'comma-dangle': 0,
+    'import/named': 0,
+    'no-unused-vars': 0,
+    'linebreak-style': 0,
+    'import/no-cycle': 0,
+    'consistent-return': 0,
+    'no-param-reassign': 0,
+    'no-underscore-dangle': 0,
+    'no-use-before-define': 0,
+    'no-unused-expressions': 0,
+    'no-restricted-globals': 0,
+    'import/no-unresolved': 0,
+    'import/no-named-as-default': 0,
+    'space-before-function-paren': 2,
+    'import/prefer-default-export': 0,
+    'import/no-named-as-default-member': 0,
+  },
+
+  extends: [
+    'airbnb-base',
+    'plugin:vue/essential'
+  ]
+};

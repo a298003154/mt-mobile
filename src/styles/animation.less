@@ -1,0 +1,146 @@
+@slide-up: ~'@{prefix}-slide-up';
+@slide-down: ~'@{prefix}-slide-down';
+@slide-left: ~'@{prefix}-slide-left';
+@slide-right: ~'@{prefix}-slide-right';
+@fade: ~'@{prefix}-fade';
+
+@slide-up-enter: ~'@{slide-up}-enter';
+@slide-up-leave: ~'@{slide-up}-leave';
+@slide-down-enter: ~'@{slide-down}-enter';
+@slide-down-leave: ~'@{slide-down}-leave';
+@slide-left-enter: ~'@{slide-left}-enter';
+@slide-left-leave: ~'@{slide-left}-leave';
+@slide-right-enter: ~'@{slide-right}-enter';
+@slide-right-leave: ~'@{slide-right}-leave';
+@fade-in: ~'@{fade}-in';
+
+@fade-out:~ '@{fade}-out';
+@rotate: ~'@{prefix}-rotate';
+
+@keyframes @slide-up-enter {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes @slide-up-leave {
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes @slide-down-enter {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes @slide-down-leave {
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes @slide-left-enter {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes @slide-left-leave {
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes @slide-right-enter {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes @slide-right-leave {
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes @fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes @fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes @rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.@{fade} {
+  &-enter-active {
+    animation: .3s @fade-in;
+  }
+
+  &-leave-active {
+    animation: .3s @fade-out;
+  }
+}
+
+.@{slide-up} {
+  &-enter-active {
+    animation: @slide-up-enter .3s both ease;
+  }
+
+  &-leave-active {
+    animation: @slide-up-leave .3s both ease;
+  }
+}
+
+.@{slide-down} {
+  &-enter-active {
+    animation: @slide-down-enter .3s both ease;
+  }
+
+  &-leave-active {
+    animation: @slide-down-leave .3s both ease;
+  }
+}
+
+.@{slide-left} {
+  &-enter-active {
+    animation: @slide-left-enter .3s both ease;
+  }
+
+  &-leave-active {
+    animation: @slide-left-leave .3s both ease;
+  }
+}
+
+.@{slide-right} {
+  &-enter-active {
+    animation: @slide-right-enter .3s both ease;
+  }
+
+  &-leave-active {
+    animation: @slide-right-leave .3s both ease;
+  }
+}
