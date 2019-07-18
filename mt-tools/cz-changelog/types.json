@@ -1,0 +1,48 @@
+{
+  "types": {
+    "feat": {
+      "description": "✨ 一个新的功能",
+      "title": "feat（功能）"
+    },
+    "fix": {
+      "description": "\uD83D\uDC1E 一次修复错误",
+      "title": "fix（修复）"
+    },
+    "docs": {
+      "description": "\uD83D\uDCDD 仅仅文档/注释的修改",
+      "title": "docs（文档）"
+    },
+    "style": {
+      "description": "\uD83C\uDFA8 不影响代码含义的变更 (空格, 格式化, 缺少的分号, 等等)",
+      "title": "style（格式）"
+    },
+    "refactor": {
+      "description": "♻ 既不修复错误也不添加功能的代码变更",
+      "title": "refactor（重构）"
+    },
+    "perf": {
+      "description": "⚡ 可以提高性能的代码变更",
+      "title": "perf（优化）"
+    },
+    "test": {
+      "description": "✅ 添加缺失测试或更正现有测试",
+      "title": "test（测试）"
+    },
+    "build": {
+      "description": "\uD83D\uDE80 影响构建系统或外部依赖项的变更 (例如: webpack, grunt, gulp, npm, package, 等等)",
+      "title": "build（构建）"
+    },
+    "ci": {
+      "description": "\uD83D\uDC77 持续集成配置文件和脚本的变更 (例如: git hooks, Travis, Circle, BrowserStack, SauceLabs, 等等)",
+      "title": "ci（集成）"
+    },
+    "chore": {
+      "description": "\uD83D\uDD27 其他不修改src或测试文件的变更 (例如: 文件移动或删除, 等等)",
+      "title": "chore（杂项）"
+    },
+    "revert": {
+      "description": "⏪ 恢复以前的代码",
+      "title": "revert（恢复）"
+    }
+  }
+}
