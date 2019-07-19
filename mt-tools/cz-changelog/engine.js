@@ -97,9 +97,10 @@ module.exports = function (options) {
         let scope = answers.scope.trim();
         scope = scope ? `(${answers.scope.trim()})` : '';
 
-        // const { emoji } = choices.find(choice => answers.type === choice.value);
+        const { emoji } = choices.find(choice => answers.type === choice.value);
+        console.log(emoji);
         // 硬限制这条线
-        const head = `${answers.type + scope}: ${answers.subject.trim()}`.slice(
+        const head = `${emoji} ${answers.type + scope}: ${answers.subject.trim()}`.slice(
           0,
           maxLineWidth
         );
