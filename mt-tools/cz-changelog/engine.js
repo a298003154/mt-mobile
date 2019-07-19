@@ -86,7 +86,6 @@ module.exports = function (options) {
         }
       ]).then((answers) => {
         const maxLineWidth = 100;
-        console.log(answers);
         const wrapOptions = {
           trim: true,
           newline: '\n',
@@ -98,9 +97,9 @@ module.exports = function (options) {
         let scope = answers.scope.trim();
         scope = scope ? `(${answers.scope.trim()})` : '';
 
-        const { emoji } = choices.find(choice => answers.type === choice.value);
+        // const { emoji } = choices.find(choice => answers.type === choice.value);
         // 硬限制这条线
-        const head = `${emoji} ${answers.type + scope}: ${answers.subject.trim()}`.slice(
+        const head = `${answers.type + scope}: ${answers.subject.trim()}`.slice(
           0,
           maxLineWidth
         );

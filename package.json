@@ -75,10 +75,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/a298003154/mt-mobile.git"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
