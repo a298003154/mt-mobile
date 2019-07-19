@@ -35,12 +35,9 @@
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
-    "lodash.map": "^4.5.1",
-    "longest": "^1.0.1",
-    "right-pad": "^1.0.1",
-    "word-wrap": "^1.0.3",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
+    "@semantic-release/release-notes-generator": "^7.2.1",
     "@vue/cli-plugin-eslint": "^3.9.0",
     "@vue/cli-plugin-typescript": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
@@ -57,13 +54,18 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "lint-staged": "^9.0.2",
-    "standard-version": "^6.0.1",
+    "lodash.map": "^4.5.1",
+    "longest": "^1.0.1",
+    "right-pad": "^1.0.1",
+    "semantic-release": "^15.13.18",
+    "sr-release-notes-generator": "^1.1.3",
     "style-resources-loader": "^1.2.1",
     "stylelint": "^10.1.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^18.3.0",
     "typescript": "^3.4.3",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "word-wrap": "^1.0.3"
   },
   "bugs": {
     "url": "https://github.com/a298003154/mt-mobile/issues"
