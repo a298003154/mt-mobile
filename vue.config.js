@@ -3,15 +3,10 @@ const { styleHandler } = require('./build/style-loader');
 
 module.exports = {
   chainWebpack: (config) => {
-    // config
-    // // Interact with entry points
-    //   .entry('app')
-    //   .set('site/main.ts')
-    //   .end();
     config
       .entry('app')
       .clear()
-      .add('./site/main.ts');
+      .add('./site/main.js');
 
     config.resolve.alias
       .set('@', path.resolve(__dirname, ''));

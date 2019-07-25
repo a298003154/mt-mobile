@@ -1,5 +1,5 @@
 export function ChildrenMixin(parent, options = {}) {
-  const indexKey = options.indexKey || 'index';
+  const indexKey = options.indexKey || 'index.js';
 
   return {
     inject: {

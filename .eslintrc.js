@@ -10,6 +10,7 @@ module.exports = {
   },
 
   parserOptions: {
+    parser: "babel-eslint",
     ecmaVersion: 2018,
     sourceType: 'module'
   },
@@ -20,9 +21,11 @@ module.exports = {
 
   rules: {
     'no-undef': 0,
+    'no-shadow': 0,
     'no-bitwise': 0,
     'func-names': 0,
     'no-plusplus': 0,
+    'no-sequences': 0,
     'comma-dangle': 0,
     'import/named': 0,
     'no-unused-vars': 0,
@@ -39,6 +42,7 @@ module.exports = {
     'space-before-function-paren': 2,
     'import/prefer-default-export': 0,
     'import/no-named-as-default-member': 0,
+    'prefer-destructuring': ['error', { object: true, array: false }],
   },
 
   extends: [

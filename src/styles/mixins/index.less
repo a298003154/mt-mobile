@@ -9,3 +9,30 @@
 .@{prefix}-ellipsis {
   .ellipsis();
 }
+
+.@{prefix}-hairline {
+  &--top::after {
+    .hairline('top');
+  }
+
+  &--left::after {
+    .hairline('left');
+  }
+
+  &--right::after {
+    .hairline('right');
+  }
+
+  &--bottom::after {
+    .hairline('bottom');
+  }
+
+  &--top-bottom::after {
+    .hairline('top');
+    .hairline('bottom');
+  }
+
+  &--surround::after {
+    .hairline('all');
+  }
+}
