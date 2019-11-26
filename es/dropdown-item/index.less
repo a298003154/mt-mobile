@@ -1,0 +1,42 @@
+@import '../style/var';
+
+@dropdown-item: ~"@{prefix}-dropdown-item";
+
+.@{dropdown-item} {
+  position: fixed;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+
+  &__option {
+    text-align: left;
+  }
+
+  &--up {
+    top: 0;
+  }
+
+  &--down {
+    bottom: 0;
+  }
+
+  &__content {
+    position: absolute;
+  }
+
+  &__icon {
+    display: block;
+    line-height: inherit;
+  }
+
+  .mt-list-item {
+    .mt-list-item__line .mt-list-item__content {
+      font-size: @font-size-base;
+    }
+  }
+
+  .mt-list-item__extra {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,64 @@
+@import '../style/var';
+@import '../style/mixins/base';
+
+@grid-item: ~"@{prefix}-grid-item";
+
+.@{grid-item} {
+  position: relative;
+  box-sizing: border-box;
+
+  &--square {
+    height: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    padding: @grid-item-content-padding;
+    background-color: @grid-item-content-background-color;
+
+    &--border:not(.@{grid-item}__content--surround) {
+      position: relative;
+      .hairline('left');
+      .hairline('bottom');
+    }
+
+    &--square {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+
+    &--center {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--surround {
+      .hairline('all');
+    }
+
+    &--clickable:active {
+      background-color: @grid-item-content-active-color;
+    }
+  }
+
+  &__icon {
+    width: @grid-item-icon-size;
+    height: @grid-item-icon-size;
+    color: @grid-item-text-color;
+  }
+
+  &__text {
+    color: @grid-item-text-color;
+    font-size: @grid-item-text-font-size;
+    word-break: break-all;
+  }
+
+  &__icon + &__text {
+    margin-top: @padding-xs;
+  }
+}

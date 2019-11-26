@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports['callback events 1'] = `
+<div class="mt-popup mt-popup--round mt-popup--bottom mt-action-sheet" name="mt-popup-slide-bottom">
+  <!---->
+  <div class="mt-action-sheet__item mt-hairline--top">
+    <!----> <span class="mt-action-sheet__name">Option</span></div>
+  <div class="mt-action-sheet__item mt-action-sheet__item--disabled mt-hairline--top">
+    <!----> <span class="mt-action-sheet__name">Option</span></div>
+  <div class="mt-action-sheet__item mt-action-sheet__item--disabled mt-hairline--top">
+    <div class="mt-loading"><span class="mt-loading__circular mt-loading__circular--xs" style="color: rgb(150, 151, 153);"><svg viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span>
+      <!---->
+    </div>
+    <!---->
+  </div>
+  <div class="mt-action-sheet__item mt-hairline--top">
+    <!----> <span class="mt-action-sheet__name">Option</span></div>
+  <!---->
+  <div class="mt-action-sheet__cancel">Cancel</div>
+</div>
+`;
+
+exports['color option 1'] = `
+<div class="mt-popup mt-popup--round mt-popup--bottom mt-action-sheet" name="mt-popup-slide-bottom">
+  <!---->
+  <div class="mt-action-sheet__item mt-hairline--top">
+    <!----> <span class="mt-action-sheet__name">Option</span></div>
+  <!---->
+  <!---->
+</div>
+`;
+
+exports['disable lazy-render 1'] = `
+<div class="mt-popup mt-popup--round mt-popup--bottom mt-action-sheet" style="display: none;" name="mt-popup-slide-bottom">
+  <!---->
+  <div class="mt-action-sheet__item mt-hairline--top">
+    <!----> <span class="mt-action-sheet__name">Option</span></div>
+  <div class="mt-action-sheet__item mt-hairline--top">
+    <!----> <span class="mt-action-sheet__name">Option</span></div>
+  <!---->
+  <div class="mt-action-sheet__cancel">Cancel</div>
+</div>
+`;
+
+exports['render title and default slot 1'] = '';
+
+exports['round prop 1'] = `
+<div class="mt-popup mt-popup--round mt-popup--bottom mt-action-sheet" name="mt-popup-slide-bottom">
+  <!---->
+  <div class="mt-action-sheet__item mt-hairline--top">
+    <!----> <span class="mt-action-sheet__name">Option</span></div>
+  <!---->
+  <!---->
+</div>
+`;

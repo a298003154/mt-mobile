@@ -1,0 +1,90 @@
+@import '../style/var';
+
+@badge: ~"@{prefix}-badge";
+
+.@{badge} {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+
+  &__sup--text {
+    position: absolute;
+    top: @badge-text-top;
+    z-index: 10;
+    box-sizing: border-box;
+    min-width: @badge-text-min-width;
+    height: @badge-text-height;
+    padding: 0 @badge-text-padding-left-right;
+    color: @badge-text-color;
+    font-size: @badge-text-font-size;
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", SimSun, sans-serif;
+    line-height: @badge-text-line-height;
+    white-space: nowrap;
+    text-align: center;
+    background-color: @badge-text-background-color;
+    border-radius: @badge-text-border-radius;
+    transform: translateX(-45%);
+    transform-origin: -10% center;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    a {
+      color: @badge-text-link-color;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &-hot &__sup--text {
+    background-color: #f96268;
+  }
+
+  &__sup--dot {
+    position: absolute;
+    top: @badge-dot-top;
+    z-index: 10;
+    width: @badge-dot-width;
+    height: @badge-dot-height;
+    background: @badge-dot-background;
+    border-radius: 100%;
+    transform: translateX(-50%);
+    transform-origin: 0 center;
+
+    &-large {
+      width: @badge-dot-large-height;
+      height: @badge-dot-large-width;
+    }
+  }
+
+  &--not-a-wrapper &__sup--text,
+  &--not-a-wrapper &__sup--dot {
+    position: relative;
+    top: auto;
+    display: block;
+    transform: translateX(0);
+  }
+
+  &__sup--corner {
+    position: absolute;
+    top: @badge-corner-top;
+    right: @badge-corner-right;
+    width: @badge-corner-width;
+    padding: @badge-corner-padding;
+    color: @badge-corner-color;
+    font-size: @badge-corner-font-size;
+    line-height: 0;
+    white-space: nowrap;
+    text-align: center;
+    background-color: @badge-corner-background-color;
+    transform: rotate(45deg);
+  }
+
+  &--corner-wrapper {
+    overflow: hidden;
+  }
+}

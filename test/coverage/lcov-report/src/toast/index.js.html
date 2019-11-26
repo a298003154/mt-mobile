@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/toast/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/toast</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">24.19% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/62</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.75% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.73% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/59</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue';
+import MtToast from './Toast';
+import { isObj, isServer } from '../utils';
+&nbsp;
+const defaultOptions = {
+  icon: '',
+  type: 'text',
+  mask: false,
+  value: true,
+  message: '',
+  className: '',
+  onClose: null,
+  onOpened: null,
+  duration: 3000,
+  iconPrefix: undefined,
+  position: 'middle',
+  forbidClick: false,
+  loadingType: undefined,
+  getContainer: 'body',
+  overlayStyle: null
+};
+&nbsp;
+let queue = [];
+let multiple = false;
+let currentOptions = {
+  ...defaultOptions
+};
+&nbsp;
+function <span class="fstat-no" title="function not covered" >parseOptions(</span>message) {
+<span class="cstat-no" title="statement not covered" >  if (isObj(message)) {</span>
+<span class="cstat-no" title="statement not covered" >    return message;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return { message };</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >createInstance(</span>) {
+  /* istanbul ignore if */
+<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span>if (isServer) {</span>
+    return {};
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (!queue.length || multiple) {</span>
+    const toast = <span class="cstat-no" title="statement not covered" >new (Vue.extend(MtToast))({</span>
+      el: document.createElement('div')
+    });
+<span class="cstat-no" title="statement not covered" >    queue.push(toast);</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return queue[queue.length - 1];</span>
+}
+&nbsp;
+// transform toast options to popup props
+function <span class="fstat-no" title="function not covered" >transformOptions(</span>options) {
+<span class="cstat-no" title="statement not covered" >  options = { ...options };</span>
+<span class="cstat-no" title="statement not covered" >  options.overlay = options.mask;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  delete options.mask;</span>
+<span class="cstat-no" title="statement not covered" >  delete options.duration;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return options;</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >Toast(</span>options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+  const toast = <span class="cstat-no" title="statement not covered" >createInstance();</span>
+&nbsp;
+  // should add z-index if previous toast has not disappeared
+<span class="cstat-no" title="statement not covered" >  if (toast.value) {</span>
+<span class="cstat-no" title="statement not covered" >    toast.updateZIndex();</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  options = {</span>
+    ...currentOptions,
+    ...parseOptions(options),
+    clear() {
+<span class="cstat-no" title="statement not covered" >      toast.value = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (options.onClose) {</span>
+<span class="cstat-no" title="statement not covered" >        options.onClose();</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (multiple &amp;&amp; !isServer) {</span>
+<span class="cstat-no" title="statement not covered" >        toast.$on('closed', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          clearTimeout(toast.timer);</span>
+<span class="cstat-no" title="statement not covered" >          queue = queue.filter(<span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item !== toast)</span>;</span>
+&nbsp;
+          const parent = <span class="cstat-no" title="statement not covered" >toast.$el.parentNode;</span>
+<span class="cstat-no" title="statement not covered" >          if (parent) {</span>
+<span class="cstat-no" title="statement not covered" >            parent.removeChild(toast.$el);</span>
+          }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          toast.$destroy();</span>
+        });
+      }
+    }
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  Object.assign(toast, transformOptions(options));</span>
+<span class="cstat-no" title="statement not covered" >  clearTimeout(toast.timer);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if (options.duration &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >    toast.timer = setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      toast.clear();</span>
+    }, options.duration);
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return toast;</span>
+}
+&nbsp;
+const createMethod = type =&gt; <span class="fstat-no" title="function not covered" >op</span>tions =&gt; <span class="cstat-no" title="statement not covered" >Toast({</span>
+  type,
+  ...parseOptions(options)
+});
+&nbsp;
+['loading', 'success', 'fail'].forEach((method) =&gt; {
+  Toast[method] = createMethod(method);
+});
+&nbsp;
+Toast.clear = <span class="fstat-no" title="function not covered" >(a</span>ll) =&gt; {
+<span class="cstat-no" title="statement not covered" >  if (queue.length) {</span>
+<span class="cstat-no" title="statement not covered" >    if (all) {</span>
+<span class="cstat-no" title="statement not covered" >      queue.forEach(<span class="fstat-no" title="function not covered" >(t</span>oast) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        toast.clear();</span>
+      });
+<span class="cstat-no" title="statement not covered" >      queue = [];</span>
+    } else <span class="cstat-no" title="statement not covered" >if (!multiple) {</span>
+<span class="cstat-no" title="statement not covered" >      queue[0].clear();</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      queue.shift().clear();</span>
+    }
+  }
+};
+&nbsp;
+Toast.setDefaultOptions = <span class="fstat-no" title="function not covered" >(o</span>ptions) =&gt; {
+<span class="cstat-no" title="statement not covered" >  Object.assign(currentOptions, options);</span>
+};
+&nbsp;
+Toast.resetDefaultOptions = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >  currentOptions = { ...defaultOptions };</span>
+};
+&nbsp;
+Toast.allowMultiple = <span class="fstat-no" title="function not covered" >(v</span>alue = <span class="branch-0 cbranch-no" title="branch not covered" >true)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >  multiple = value;</span>
+};
+&nbsp;
+Toast.install = () =&gt; {
+  Vue.use(MtToast);
+};
+&nbsp;
+Vue.prototype.$toast = Toast;
+&nbsp;
+export default Toast;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Oct 09 2019 15:51:15 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

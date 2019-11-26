@@ -1,0 +1,47 @@
+@import '../var';
+@import 'base';
+
+/**
+ * Entry of basic mixins
+ */
+
+.@{prefix}-clearfix {
+  .clearfix();
+}
+
+.@{prefix}-ellipsis {
+  .ellipsis();
+}
+
+.@{prefix}-hairline {
+  &--top {
+    position: relative;
+    .hairline('top');
+  }
+
+  &--left {
+    position: relative;
+    .hairline('left');
+  }
+
+  &--right {
+    position: relative;
+    .hairline('right');
+  }
+
+  &--bottom {
+    position: relative;
+    .hairline('bottom');
+  }
+
+  &--top-bottom {
+    position: relative;
+    .hairline('top');
+    .hairline('bottom');
+  }
+
+  &--surround {
+    position: relative;
+    .hairline('all');
+  }
+}

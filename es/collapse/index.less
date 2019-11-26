@@ -1,0 +1,12 @@
+@import '../style/var';
+@import '../style/mixins/base';
+
+@collapse: ~"@{prefix}-collapse";
+
+.@{collapse} {
+  &--border {
+    position: relative;
+    .hairline('top');
+    .hairline('bottom');
+  }
+}

@@ -1,0 +1,67 @@
+import Vue from 'vue';
+import MtImagePreview from './ImagePreview';
+import { isServer } from '../utils';
+
+let instance;
+
+const defaultConfig = {
+  images: [],
+  loop: true,
+  swipeDuration: 500,
+  value: true,
+  minZoom: 1 / 3,
+  maxZoom: 3,
+  className: '',
+  onClose: null,
+  onChange: null,
+  lazyLoad: false,
+  showIndex: true,
+  asyncClose: false,
+  startPosition: 0,
+  showIndicators: false,
+  closeOnPopstate: false
+};
+
+const initInstance = () => {
+  instance = new (Vue.extend(MtImagePreview))({
+    el: document.createElement('div')
+  });
+  document.body.appendChild(instance.$el);
+
+  instance.$on('change', (index) => {
+    if (instance.onChange) {
+      instance.onChange(index);
+    }
+  });
+};
+
+const ImagePreview = (images, startPosition = 0) => {
+  /* istanbul ignore if */
+  if (isServer) {
+    return;
+  }
+
+  if (!instance) {
+    initInstance();
+  }
+
+  const options = Array.isArray(images) ? { images, startPosition } : images;
+
+  Object.assign(instance, defaultConfig, options);
+
+  instance.$once('input', (show) => {
+    instance.value = show;
+  });
+
+  if (options.onClose) {
+    instance.$once('close', options.onClose);
+  }
+
+  return instance;
+};
+
+ImagePreview.install = () => {
+  Vue.use(MtImagePreview);
+};
+
+export default ImagePreview;

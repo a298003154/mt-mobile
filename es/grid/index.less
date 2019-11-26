@@ -1,0 +1,15 @@
+@import '../style/var';
+@import '../style/mixins/base';
+
+@grid: ~"@{prefix}-grid";
+
+.@{grid} {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--border {
+    position: relative;
+    .hairline('top');
+    .hairline('right');
+  }
+}

@@ -1,0 +1,99 @@
+@import '../style/var';
+@import '../style/mixins/base';
+
+@tag: ~"@{prefix}-tag";
+
+.@{tag} {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: @tag-height;
+  padding: @tag-padding;
+  color: @tag-text-color;
+  font-size: @tag-font-size;
+  .hairline('all', currentColor, @tag-border-radius);
+
+  &--default {
+    background-color: @tag-default-color;
+
+    &.@{tag}--plain {
+      color: @tag-default-color;
+    }
+  }
+
+  &--danger {
+    background-color: @tag-dander-color;
+
+    &.@{tag}--plain {
+      color: @tag-dander-color;
+    }
+  }
+
+  &--primary {
+    background-color: @tag-primary-color;
+
+    &.@{tag}--plain {
+      color: @tag-primary-color;
+    }
+  }
+
+  &--success {
+    background-color: @tag-success-color;
+
+    &.@{tag}--plain {
+      color: @tag-success-color;
+    }
+  }
+
+  &--warning {
+    background-color: @tag-warning-color;
+
+    &.@{tag}--plain {
+      color: @tag-warning-color;
+    }
+  }
+
+  &--plain {
+    background-color: @tag-plain-background-color;
+  }
+
+  &--mark {
+    padding-right: 8px;
+    border-radius: 0 @tag-round-border-radius @tag-round-border-radius 0;
+
+    &.@{tag}--medium {
+      padding-right: 14px;
+      border-radius: 0 @tag-round-medium-border-radius @tag-round-medium-border-radius 0;
+    }
+  }
+
+  &--round {
+    border-radius: @tag-round-border-radius;
+
+    &.@{tag}--medium {
+      border-radius: @tag-round-medium-border-radius;
+    }
+  }
+
+  &--medium {
+    height: @tag-medium-height;
+    padding: @tag-medium-padding;
+    font-size: @tag-medium-font-size;
+    .hairline('all', currentColor, @tag-border-radius * 1.5);
+
+    .@{tag}__close {
+      margin-right: -6px;
+      margin-left: 6px;
+    }
+  }
+
+  &__close {
+    margin-left: 5px;
+    cursor: pointer;
+    opacity: .6;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports['color option 1'] = '<span class="mt-badge mt-badge--not-a-wrapper" value="true" actions="[object Object]"> <!----></span>';
+
+exports['disable lazy-render 1'] = '<span class="mt-badge mt-badge--not-a-wrapper" actions="[object Object],[object Object]" canceltext="Cancel"> <!----></span>';
+
+exports['render title and default slot 1'] = '<span class="mt-badge mt-badge--not-a-wrapper" title="Title">Default <!----></span>';
+
+exports['round prop 1'] = '<span class="mt-badge mt-badge--not-a-wrapper" value="true" round="true" actions="[object Object]"> <!----></span>';

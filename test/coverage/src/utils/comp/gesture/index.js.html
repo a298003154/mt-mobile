@@ -1,0 +1,1367 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/utils/comp/gesture/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\..\index.html">All files</a> / <a href="index.html">src/utils/comp/gesture</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0.6% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/166</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/103</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0.61% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/165</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  calcRotation,
+  getEventName, now,
+  calcMultiFingerStatus, calcMoveStatus,
+  shouldTriggerSwipe, shouldTriggerDirection,
+  getMovingDirection, getDirectionEventName
+} from './util';
+&nbsp;
+import {
+  PRESS, DIRECTION_ALL, DIRECTION_VERTICAL, DIRECTION_HORIZONTAL
+} from './config';
+&nbsp;
+const directionMap = {
+  all: DIRECTION_ALL,
+  vertical: DIRECTION_VERTICAL,
+  horizontal: DIRECTION_HORIZONTAL
+};
+&nbsp;
+export default {
+  name: 'gesture',
+&nbsp;
+  props: {
+    direction: {
+      type: String,
+      default: 'all'
+    },
+    enableRotate: {
+      type: Boolean,
+      default: false
+    },
+    enablePinch: {
+      type: Boolean,
+      default: false
+    }
+  },
+&nbsp;
+  data() {
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      gesture: null,
+      pressTimer: null,
+      event: null,
+      directionSetting: null
+    };
+  },
+&nbsp;
+  created() {
+<span class="cstat-no" title="statement not covered" >    this.directionSetting = directionMap[this.direction];</span>
+  },
+&nbsp;
+  methods: {
+    triggerEvent(name, ...args) {
+<span class="cstat-no" title="statement not covered" >      this.$emit(name, this.getGestureState(), ...args);</span>
+    },
+&nbsp;
+    triggerCombineEvent(mainEventName, eventStatus, ...args) {
+<span class="cstat-no" title="statement not covered" >      this.triggerEvent(mainEventName, ...args);</span>
+<span class="cstat-no" title="statement not covered" >      this.triggerSubEvent(mainEventName, eventStatus, ...args);</span>
+    },
+&nbsp;
+    triggerSubEvent(mainEventName, eventStatus, ...args) {
+<span class="cstat-no" title="statement not covered" >      if (eventStatus) {</span>
+        const subEventName = <span class="cstat-no" title="statement not covered" >getEventName(mainEventName, eventStatus);</span>
+<span class="cstat-no" title="statement not covered" >        this.triggerEvent(subEventName, ...args);</span>
+      }
+    },
+    triggerPinchEvent(mainEventName, eventStatus, ...args) {
+      const { scale } = <span class="cstat-no" title="statement not covered" >this.gesture;</span>
+<span class="cstat-no" title="statement not covered" >      if (eventStatus === 'move' &amp;&amp; typeof scale === 'number') {</span>
+<span class="cstat-no" title="statement not covered" >        if (scale &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >          this.triggerEvent('pinchOut');</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (scale &lt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >          this.triggerEvent('pinchIn');</span>
+        }
+      }
+<span class="cstat-no" title="statement not covered" >      this.triggerCombineEvent(mainEventName, eventStatus, ...args);</span>
+    },
+    initPressTimer() {
+<span class="cstat-no" title="statement not covered" >      this.cleanPressTimer();</span>
+<span class="cstat-no" title="statement not covered" >      this.pressTimer = setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.setGestureState({</span>
+          press: true,
+        });
+<span class="cstat-no" title="statement not covered" >        this.triggerEvent('press');</span>
+      }, PRESS.time);
+    },
+&nbsp;
+    cleanPressTimer() {
+      /* tslint:disable:no-unused-expression */
+<span class="cstat-no" title="statement not covered" >      this.pressTimer &amp;&amp; clearTimeout(this.pressTimer);</span>
+<span class="cstat-no" title="statement not covered" >      this.pressTimer = null;</span>
+    },
+&nbsp;
+    setGestureState(params) {
+<span class="cstat-no" title="statement not covered" >      if (!this.gesture) {</span>
+<span class="cstat-no" title="statement not covered" >        this.gesture = {};</span>
+      }
+&nbsp;
+      // cache the previous touches
+<span class="cstat-no" title="statement not covered" >      if (this.gesture.touches) {</span>
+<span class="cstat-no" title="statement not covered" >        this.gesture.preTouches = this.gesture.touches;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      this.gesture = {</span>
+        ...this.gesture,
+        ...params,
+      };
+    },
+&nbsp;
+    getGestureState() {
+<span class="cstat-no" title="statement not covered" >      if (!this.gesture) {</span>
+<span class="cstat-no" title="statement not covered" >        return this.gesture;</span>
+      }
+      // shallow copy
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        ...this.gesture,
+      };
+    },
+&nbsp;
+    cleanGestureState() {
+<span class="cstat-no" title="statement not covered" >      this.gesture = null;</span>
+    },
+&nbsp;
+    getTouches(e) {
+<span class="cstat-no" title="statement not covered" >      return [...e.touches].map(<span class="fstat-no" title="function not covered" >it</span>em =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+        x: item.screenX,
+        y: item.screenY,
+      }));
+    },
+&nbsp;
+    triggerUserCb(status, e) {
+      const cbName = <span class="cstat-no" title="statement not covered" >getEventName('touch', status);</span>
+<span class="cstat-no" title="statement not covered" >      this.$emit(cbName, e);</span>
+    },
+&nbsp;
+    _handleTouchStart(e) {
+<span class="cstat-no" title="statement not covered" >      this.triggerUserCb('start', e);</span>
+<span class="cstat-no" title="statement not covered" >      this.event = e;</span>
+<span class="cstat-no" title="statement not covered" >      if (e.touches.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >        e.preventDefault();</span>
+      }
+<span class="cstat-no" title="statement not covered" >      this.initGestureStatus(e);</span>
+<span class="cstat-no" title="statement not covered" >      this.initPressTimer();</span>
+<span class="cstat-no" title="statement not covered" >      this.checkIfMultiTouchStart();</span>
+    },
+&nbsp;
+    initGestureStatus(e) {
+<span class="cstat-no" title="statement not covered" >      this.cleanGestureState();</span>
+      // store the gesture start state
+      const startTouches = <span class="cstat-no" title="statement not covered" >this.getTouches(e);</span>
+      const startTime = <span class="cstat-no" title="statement not covered" >now();</span>
+      const startMultiFingerStatus = <span class="cstat-no" title="statement not covered" >calcMultiFingerStatus(startTouches);</span>
+<span class="cstat-no" title="statement not covered" >      this.setGestureState({</span>
+        startTime,
+        startTouches,
+        startMultiFingerStatus,
+        /* copy for next time touch move cala convenient */
+        time: startTime,
+        touches: startTouches,
+        multiFingerStatus: startMultiFingerStatus,
+        srcEvent: this.event,
+      });
+    },
+&nbsp;
+    checkIfMultiTouchStart() {
+      const { enablePinch, enableRotate } = <span class="cstat-no" title="statement not covered" >this;</span>
+      const { touches } = <span class="cstat-no" title="statement not covered" >this.gesture;</span>
+<span class="cstat-no" title="statement not covered" >      if (touches.length &gt; 1 &amp;&amp; (enablePinch || enableRotate)) {</span>
+<span class="cstat-no" title="statement not covered" >        if (enablePinch) {</span>
+          const startMultiFingerStatus = <span class="cstat-no" title="statement not covered" >calcMultiFingerStatus(touches);</span>
+<span class="cstat-no" title="statement not covered" >          this.setGestureState({</span>
+            startMultiFingerStatus,
+&nbsp;
+            /* init pinch status */
+            pinch: true,
+            scale: 1,
+          });
+<span class="cstat-no" title="statement not covered" >          this.triggerCombineEvent('pinch', 'start');</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (enableRotate) {</span>
+<span class="cstat-no" title="statement not covered" >          this.setGestureState({</span>
+            /* init rotate status */
+            rotate: true,
+            rotation: 0,
+          });
+<span class="cstat-no" title="statement not covered" >          this.triggerCombineEvent('rotate', 'start');</span>
+        }
+      }
+    },
+&nbsp;
+    _handleTouchMove(e) {
+<span class="cstat-no" title="statement not covered" >      this.triggerUserCb('move', e);</span>
+<span class="cstat-no" title="statement not covered" >      this.event = e;</span>
+<span class="cstat-no" title="statement not covered" >      if (!this.gesture) {</span>
+        // sometimes weird happen:
+        // touchstart -&gt; touchmove..touchmove.. --&gt; touchend --&gt; touchmove --&gt; touchend
+        // so we need to skip the unnormal event cycle after touchend
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+&nbsp;
+      // not a long press
+<span class="cstat-no" title="statement not covered" >      this.cleanPressTimer();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      this.updateGestureStatus(e);</span>
+<span class="cstat-no" title="statement not covered" >      this.checkIfSingleTouchMove();</span>
+<span class="cstat-no" title="statement not covered" >      this.checkIfMultiTouchMove();</span>
+    },
+&nbsp;
+    checkIfMultiTouchMove() {
+      const {
+        pinch, rotate, touches, startMultiFingerStatus, multiFingerStatus
+      } = <span class="cstat-no" title="statement not covered" >this.gesture;</span>
+<span class="cstat-no" title="statement not covered" >      if (!pinch &amp;&amp; !rotate) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (touches.length &lt; 2) {</span>
+<span class="cstat-no" title="statement not covered" >        this.setGestureState({</span>
+          pinch: false,
+          rotate: false,
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        pinch &amp;&amp; this.triggerCombineEvent('pinch', 'cancel');</span>
+<span class="cstat-no" title="statement not covered" >        rotate &amp;&amp; this.triggerCombineEvent('rotate', 'cancel');</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (pinch) {</span>
+        const scale = <span class="cstat-no" title="statement not covered" >multiFingerStatus.z / startMultiFingerStatus.z;</span>
+<span class="cstat-no" title="statement not covered" >        this.setGestureState({</span>
+          scale,
+        });
+<span class="cstat-no" title="statement not covered" >        this.triggerPinchEvent('pinch', 'move');</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (rotate) {</span>
+        const rotation = <span class="cstat-no" title="statement not covered" >calcRotation(startMultiFingerStatus, multiFingerStatus);</span>
+<span class="cstat-no" title="statement not covered" >        this.setGestureState({</span>
+          rotation,
+        });
+<span class="cstat-no" title="statement not covered" >        this.triggerCombineEvent('rotate', 'move');</span>
+      }
+    },
+&nbsp;
+    allowGesture() {
+<span class="cstat-no" title="statement not covered" >      return shouldTriggerDirection(this.gesture.direction, this.directionSetting);</span>
+    },
+&nbsp;
+    checkIfSingleTouchMove() {
+      const {
+        pan, touches, moveStatus, preTouches, availablePan = <span class="branch-0 cbranch-no" title="branch not covered" >true</span>
+      } = <span class="cstat-no" title="statement not covered" >this.gesture;</span>
+<span class="cstat-no" title="statement not covered" >      if (touches.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >        this.setGestureState({</span>
+          pan: false,
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        pan &amp;&amp; this.triggerCombineEvent('pan', 'cancel');</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+&nbsp;
+      /** add avilablePan condition to fix the case in scrolling,
+        which will cause unavailable pan move. */
+<span class="cstat-no" title="statement not covered" >      if (moveStatus &amp;&amp; availablePan) {</span>
+        const direction = <span class="cstat-no" title="statement not covered" >getMovingDirection(preTouches[0], touches[0]);</span>
+<span class="cstat-no" title="statement not covered" >        this.setGestureState({ direction });</span>
+&nbsp;
+        const eventName = <span class="cstat-no" title="statement not covered" >getDirectionEventName(direction);</span>
+<span class="cstat-no" title="statement not covered" >        if (!this.allowGesture()) {</span>
+          /** if the first move is unavailable,
+           * then judge all of remaining touch movings are also invalid.
+           */
+<span class="cstat-no" title="statement not covered" >          if (!pan) {</span>
+<span class="cstat-no" title="statement not covered" >            this.setGestureState({ availablePan: false });</span>
+          }
+<span class="cstat-no" title="statement not covered" >          return;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (!pan) {</span>
+<span class="cstat-no" title="statement not covered" >          this.triggerCombineEvent('pan', 'start');</span>
+<span class="cstat-no" title="statement not covered" >          this.setGestureState({</span>
+            pan: true,
+            availablePan: true,
+          });
+        } else {
+<span class="cstat-no" title="statement not covered" >          this.triggerCombineEvent('pan', eventName);</span>
+<span class="cstat-no" title="statement not covered" >          this.triggerSubEvent('pan', 'move');</span>
+        }
+      }
+    },
+&nbsp;
+    checkIfMultiTouchEnd(status) {
+      const { pinch, rotate } = <span class="cstat-no" title="statement not covered" >this.gesture;</span>
+<span class="cstat-no" title="statement not covered" >      if (pinch) {</span>
+<span class="cstat-no" title="statement not covered" >        this.triggerCombineEvent('pinch', status);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (rotate) {</span>
+<span class="cstat-no" title="statement not covered" >        this.triggerCombineEvent('rotate', status);</span>
+      }
+    },
+&nbsp;
+    updateGestureStatus(e) {
+      const time = <span class="cstat-no" title="statement not covered" >now();</span>
+<span class="cstat-no" title="statement not covered" >      this.setGestureState({</span>
+        time,
+      });
+<span class="cstat-no" title="statement not covered" >      if (!e.touches || !e.touches.length) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+      const {
+        startTime, startTouches, pinch, rotate
+      } = <span class="cstat-no" title="statement not covered" >this.gesture;</span>
+      const touches = <span class="cstat-no" title="statement not covered" >this.getTouches(e);</span>
+      const moveStatus = <span class="cstat-no" title="statement not covered" >calcMoveStatus(startTouches, touches, time - startTime);</span>
+      let multiFingerStatus;
+<span class="cstat-no" title="statement not covered" >      if (pinch || rotate) {</span>
+<span class="cstat-no" title="statement not covered" >        multiFingerStatus = calcMultiFingerStatus(touches);</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      this.setGestureState({</span>
+        /* update status snapshot */
+        touches,
+        multiFingerStatus,
+        /* update duration status */
+        moveStatus,
+&nbsp;
+      });
+    },
+&nbsp;
+    _handleTouchEnd(e) {
+<span class="cstat-no" title="statement not covered" >      this.triggerUserCb('end', e);</span>
+<span class="cstat-no" title="statement not covered" >      this.event = e;</span>
+<span class="cstat-no" title="statement not covered" >      if (!this.gesture) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      this.cleanPressTimer();</span>
+<span class="cstat-no" title="statement not covered" >      this.updateGestureStatus(e);</span>
+<span class="cstat-no" title="statement not covered" >      this.doSingleTouchEnd('end');</span>
+<span class="cstat-no" title="statement not covered" >      this.checkIfMultiTouchEnd('end');</span>
+    },
+&nbsp;
+    _handleTouchCancel(e) {
+<span class="cstat-no" title="statement not covered" >      this.triggerUserCb('cancel', e);</span>
+<span class="cstat-no" title="statement not covered" >      this.event = e;</span>
+<span class="cstat-no" title="statement not covered" >      if (!this.gesture) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      this.cleanPressTimer();</span>
+<span class="cstat-no" title="statement not covered" >      this.updateGestureStatus(e);</span>
+<span class="cstat-no" title="statement not covered" >      this.doSingleTouchEnd('cancel');</span>
+<span class="cstat-no" title="statement not covered" >      this.checkIfMultiTouchEnd('cancel');</span>
+    },
+&nbsp;
+    triggerAllowEvent(type, status) {
+<span class="cstat-no" title="statement not covered" >      if (this.allowGesture()) {</span>
+<span class="cstat-no" title="statement not covered" >        this.triggerCombineEvent(type, status);</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        this.triggerSubEvent(type, status);</span>
+      }
+    },
+&nbsp;
+    doSingleTouchEnd(status) {
+      const {
+        moveStatus, pinch, rotate, press, pan, direction
+      } = <span class="cstat-no" title="statement not covered" >this.gesture;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (pinch || rotate) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (moveStatus) {</span>
+        const { z, velocity } = <span class="cstat-no" title="statement not covered" >moveStatus;</span>
+        const swipe = <span class="cstat-no" title="statement not covered" >shouldTriggerSwipe(z, velocity);</span>
+<span class="cstat-no" title="statement not covered" >        this.setGestureState({</span>
+          swipe,
+        });
+<span class="cstat-no" title="statement not covered" >        if (pan) {</span>
+          // pan need end, it's a process
+          // sometimes, start with pan left, but end with pan right....
+<span class="cstat-no" title="statement not covered" >          this.triggerAllowEvent('pan', status);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        if (swipe) {</span>
+          const directionEvName = <span class="cstat-no" title="statement not covered" >getDirectionEventName(direction);</span>
+          // swipe just need a direction, it's a endpoint
+<span class="cstat-no" title="statement not covered" >          this.triggerAllowEvent('swipe', directionEvName);</span>
+<span class="cstat-no" title="statement not covered" >          return;</span>
+        }
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (press) {</span>
+<span class="cstat-no" title="statement not covered" >        this.triggerEvent('pressUp');</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      this.triggerEvent('tap');</span>
+    },
+&nbsp;
+    getTouchAction() {
+      const { enablePinch, enableRotate } = <span class="cstat-no" title="statement not covered" >this;</span>
+      const { directionSetting } = <span class="cstat-no" title="statement not covered" >this;</span>
+<span class="cstat-no" title="statement not covered" >      if (enablePinch || enableRotate || directionSetting === DIRECTION_ALL) {</span>
+<span class="cstat-no" title="statement not covered" >        return 'pan-x pan-y';</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (directionSetting === DIRECTION_VERTICAL) {</span>
+<span class="cstat-no" title="statement not covered" >        return 'pan-x';</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (directionSetting === DIRECTION_HORIZONTAL) {</span>
+<span class="cstat-no" title="statement not covered" >        return 'pan-y';</span>
+      }
+<span class="cstat-no" title="statement not covered" >      return 'auto';</span>
+    }
+  },
+&nbsp;
+  render() {
+<span class="cstat-no" title="statement not covered" >    if (!this.$slots.default || this.$slots.default.length !== 1) {</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error('slots number is not one.');</span>
+    }
+    const touchAction = <span class="cstat-no" title="statement not covered" >this.getTouchAction();</span>
+&nbsp;
+    const on = <span class="cstat-no" title="statement not covered" >{</span>
+      touchstart: this._handleTouchStart,
+      touchmove: this._handleTouchMove,
+      touchcancel: this._handleTouchCancel,
+      touchend: this._handleTouchEnd
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    Object.assign(</span>
+      this.$slots.default[0].data,
+      {
+        on,
+        style: {
+          ...this.$slots.default[0].data.style,
+          touchAction
+        }
+      }
+    );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return this.$slots.default[0];</span>
+  }
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Oct 09 2019 15:51:15 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\..\sorter.js"></script>
+</body>
+</html>

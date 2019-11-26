@@ -1,0 +1,45 @@
+@import '../style/var';
+
+@tabbar-item: ~"@{prefix}-tabbar-item";
+
+.@{tabbar-item} {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: @tabbar-item-text-color;
+  font-size: @tabbar-item-font-size;
+  line-height: @tabbar-item-line-height;
+
+  &__icon {
+    position: relative;
+    margin-bottom: @tabbar-item-margin-bottom;
+    font-size: @tabbar-item-icon-size;
+    white-space: nowrap;
+
+    .@{prefix}-icon {
+      width: 24px;
+      min-width: 1em;
+      height: 24px;
+    }
+
+    .@{prefix}-badge__sup--text {
+      top: -4px;
+    }
+
+    img {
+      display: inline-block;
+      height: @tabbar-item-icon-size;
+      padding: 3px;
+    }
+  }
+
+  &--active {
+    color: @tabbar-item-active-color;
+  }
+
+  .mt-info {
+    margin-top: 2px;
+  }
+}

@@ -1,0 +1,45 @@
+@import '../style/var';
+
+@sidebar-item: ~"@{prefix}-sidebar-item";
+
+.@{sidebar-item} {
+  display: block;
+  box-sizing: border-box;
+  padding: @sidebar-padding;
+  overflow: hidden;
+  color: @sidebar-text-color;
+  font-size: @sidebar-font-size;
+  line-height: @sidebar-line-height;
+  word-break: break-all;
+  background-color: @sidebar-background-color;
+  border-left: 3px solid transparent;
+  user-select: none;
+
+  &__text {
+    position: relative;
+    display: inline-block;
+  }
+
+  &:active {
+    background-color: @sidebar-active-color;
+  }
+
+  &--select {
+    color: @sidebar-selected-text-color;
+    font-weight: @sidebar-selected-font-weight;
+    border-color: @sidebar-selected-border-color;
+
+    &,
+    &:active {
+      background-color: @sidebar-selected-background-color;
+    }
+  }
+
+  &--disabled {
+    color: @sidebar-disabled-text-color;
+
+    &:active {
+      background-color: @sidebar-background-color;
+    }
+  }
+}

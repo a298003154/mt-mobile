@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports['renders demo correctly 1'] = `
+<div>
+  <div><button role="button" class="mt-button mt-button--primary mt-button--normal">
+      <!----> <span class="mt-button__text">
+      弹出菜单
+    </span></button>
+    <!---->
+  </div>
+  <div><button role="button" class="mt-button mt-button--primary mt-button--normal">
+      <!----> <span class="mt-button__text">
+      弹出菜单
+    </span></button>
+    <!---->
+  </div>
+  <div><button role="button" class="mt-button mt-button--primary mt-button--normal">
+      <!----> <span class="mt-button__text">
+      弹出菜单
+    </span></button>
+    <!---->
+  </div>
+  <div><button role="button" class="mt-button mt-button--primary mt-button--normal">
+      <!----> <span class="mt-button__text">
+      弹出菜单
+    </span></button>
+    <!---->
+  </div>
+</div>
+`;

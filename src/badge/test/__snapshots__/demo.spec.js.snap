@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports['renders demo correctly 1'] = `
+<div>
+  <div>
+    <div class="mt-list">
+      <!---->
+      <div class="mt-list__body">
+        <div class="mt-list-item mt-list-item--middle">
+          <!---->
+          <div class="mt-list-item__line">
+            <div class="mt-list-item__content"><span class="mt-badge"><img src="http://qzapp.qlogo.cn/qzapp/1106862728/B936520FA9F318FA5BE07FAE5178C7F9/100"> <sup class="mt-badge__sup mt-badge__sup--dot"></sup></span> <span style="margin-left: 12px;">小红点徽标</span>
+              <!---->
+            </div>
+            <!---->
+            <div aria-hidden="true" class="mt-list-item__arrow mt-list-item__arrow--horizontal"></div>
+          </div>
+        </div>
+        <div class="mt-list-item mt-list-item--middle">
+          <div class="mt-list-item__thumb"><img src="http://qzapp.qlogo.cn/qzapp/1106862728/E1599FC1409FEAA678600D360C5DF850/100" alt="thumb"></div>
+          <div class="mt-list-item__line">
+            <div class="mt-list-item__content">
+              内容
+              <!---->
+            </div>
+            <div class="mt-list-item__extra"><span class="mt-badge mt-badge--not-a-wrapper"> <sup class="mt-badge__sup mt-badge__sup--text">55+</sup></span></div>
+            <div aria-hidden="true" class="mt-list-item__arrow mt-list-item__arrow--horizontal"></div>
+          </div>
+        </div>
+        <div class="mt-list-item mt-list-item--middle">
+          <!---->
+          <div class="mt-list-item__line">
+            <div class="mt-list-item__content"><span class="mt-badge mt-badge--corner-wrapper"><div class="corner-badge">使用角标</div> <sup class="mt-badge__sup mt-badge__sup--corner">促</sup></span>
+              <!---->
+            </div>
+            <!---->
+            <!---->
+          </div>
+        </div>
+        <div class="special-badge mt-list-item mt-list-item--middle">
+          <!---->
+          <div class="mt-list-item__line">
+            <div class="mt-list-item__content">
+              自定义角标
+              <!---->
+            </div>
+            <div class="mt-list-item__extra"><span class="mt-badge mt-badge--not-a-wrapper"> <sup class="mt-badge__sup mt-badge__sup--text">促</sup></span></div>
+            <!---->
+          </div>
+        </div>
+        <div class="mt-list-item mt-list-item--middle">
+          <!---->
+          <div class="mt-list-item__line">
+            <div class="mt-list-item__content">
+              促销:
+              <span class="mt-badge mt-badge--not-a-wrapper mt-badge--hot" style="margin-left: 8px;"> <sup class="mt-badge__sup mt-badge__sup--text">减</sup></span> <span class="mt-badge mt-badge--not-a-wrapper mt-badge--hot" style="margin-left: 8px;"> <sup class="mt-badge__sup mt-badge__sup--text">惠</sup></span> <span class="mt-badge mt-badge--not-a-wrapper mt-badge--hot" style="margin-left: 8px;"> <sup class="mt-badge__sup mt-badge__sup--text">免</sup></span> <span class="mt-badge mt-badge--not-a-wrapper mt-badge--hot" style="margin-left: 8px;"> <sup class="mt-badge__sup mt-badge__sup--text">反</sup></span> <span class="mt-badge mt-badge--not-a-wrapper mt-badge--hot" style="margin-left: 8px;"> <sup class="mt-badge__sup mt-badge__sup--text">HOT</sup></span>
+              <!---->
+            </div>
+            <!---->
+            <!---->
+          </div>
+        </div>
+        <div class="mt-list-item mt-list-item--middle">
+          <!---->
+          <div class="mt-list-item__line">
+            <div class="mt-list-item__content">
+              定制:
+              <span class="mt-badge mt-badge--not-a-wrapper" style="margin-left: 8px;"> <sup class="mt-badge__sup mt-badge__sup--text" style="background-color: rgb(241, 151, 54); border-radius: 2px;">券</sup></span> <span class="mt-badge mt-badge--not-a-wrapper" style="margin-left: 8px;"> <sup class="mt-badge__sup mt-badge__sup--text" style="background-color: rgb(33, 182, 138); padding: 0px 8px; border-radius: 4px;">NEW</sup></span> <span class="mt-badge mt-badge--not-a-wrapper" style="margin-left: 8px;"> <sup class="mt-badge__sup mt-badge__sup--text" style="padding: 0px 3px; background-color: rgb(255, 255, 255); border-radius: 2; color: rgb(241, 151, 54); border: 1px solid #f19736;">自动缴费</sup></span>
+              <!---->
+            </div>
+            <!---->
+            <!---->
+          </div>
+        </div>
+      </div>
+      <!---->
+    </div>
+  </div>
+</div>
+`;
